@@ -1,0 +1,17 @@
+---
+- name: Update repositories cache and install "bash-completion" package
+  ansible.builtin.apt:
+    name: bash-completion
+    update_cache: true
+
+- name: Add alias k and active completion
+  ansible.builtin.blockinfile:
+    path: "{{ home_dir}}/.bashrc"
+    block: |
+      source <(kubectl completion bash)
+      alias k=kubectl
+
+- name: Execute source .bashrc
+  ansible.builtin.shell: source {{ home_dir }}/.bashrc
+  args:
+    executable: /bin/bash

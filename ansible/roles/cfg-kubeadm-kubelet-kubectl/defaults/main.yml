@@ -1,0 +1,3 @@
+---
+# defaults file for roles/configure-kubeadm-kubelet
+kubernetes_version: '{{ lookup("env", "kubernetes_version") or "1.28.0" }}'

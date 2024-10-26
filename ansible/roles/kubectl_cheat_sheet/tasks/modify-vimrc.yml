@@ -1,0 +1,16 @@
+- name: Update repositories cache and install "vim" package
+  ansible.builtin.apt:
+    name: vim
+    update_cache: true
+
+- name: Add alias k and active completion
+  ansible.builtin.blockinfile:
+    path: "{{ home_dir}}/.vimrc"
+    create: true
+    block: |
+      set ts=2 sw=2 et
+
+- name: Execute source .vimrc
+  ansible.builtin.shell: source {{ home_dir }}/.vimrc
+  args:
+    executable: /bin/bash

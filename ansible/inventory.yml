@@ -1,0 +1,12 @@
+control_plan_nodes:
+  hosts:
+    k8s-0:       
+worker_nodes:
+  hosts:
+    k8s-1:            
+    k8s-2:      
+cluster_nodes:
+  children: 
+    control_plan_nodes: 
+    worker_nodes: 
+      

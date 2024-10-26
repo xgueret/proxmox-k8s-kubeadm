@@ -1,0 +1,10 @@
+---
+# tasks file for roles/kubectl_cheat_sheet
+- name: Modify file .bashrc
+  ansible.builtin.include_tasks: modify-bashrc.yml
+
+- name: Modify file .vimrc
+  ansible.builtin.include_tasks: modify-vimrc.yml
+
+- name: Modify file .profile
+  ansible.builtin.include_tasks: modify-profile.yml

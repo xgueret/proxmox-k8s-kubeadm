@@ -1,0 +1,20 @@
+---
+- name: Define list of packages
+  ansible.builtin.set_fact:
+    packages:
+      - net-tools
+      - socat
+      - conntrack
+      - ipvsadm
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - jq
+      - openssl
+      - software-properties-common
+
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"

@@ -1,0 +1,4 @@
+---
+# defaults file for roles/configure-containerd
+# https://github.com/containerd/containerd/releases
+containerd_version: '{{ lookup("env", "containerd_version") or "1.7.13" }}'

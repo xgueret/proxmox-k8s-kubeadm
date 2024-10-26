@@ -1,0 +1,4 @@
+---
+# defaults file for roles/install-cni-plugins
+# https://github.com/containernetworking/plugins/releaseshttps://github.com/containernetworking/plugins/releases  
+cni_version: '{{ lookup("env", "cni_version") or "1.4.0"}}'

@@ -1,0 +1,5 @@
+kubernetes_gpg:
+  path: /usr/share/keyrings/kubernetes-apt-keyring.gpg
+  tmp_path: "/tmp/kubernetes-apt-keyring.gpg"
+  url: https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key
+  repo: "deb [signed-by=/usr/share/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /"

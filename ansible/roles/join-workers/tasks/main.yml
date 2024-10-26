@@ -1,0 +1,12 @@
+---
+# tasks file for roles/join-workers
+- name: Read join command
+  ansible.builtin.debug: msg={{ lookup('file', join_command_location) }}
+  register: join_command_local
+
+- name: Show join command
+  ansible.builtin.debug:
+    var: join_command_local.msg
+
+- name: Join agents to cluster
+  ansible.builtin.command: "{{ join_command_local.msg }}"

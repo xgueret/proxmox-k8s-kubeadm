@@ -1,0 +1,11 @@
+---
+# tasks file for roles/bootstrap-node
+- name: Update and upgrade apt packages
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: true
+    autoclean: true
+    autoremove: true
+
+- name: Install packages
+  ansible.builtin.include_tasks: install-packages.yml

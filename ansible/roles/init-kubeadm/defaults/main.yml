@@ -1,0 +1,8 @@
+---
+# defaults file for roles/init-kubeadm
+pod_cidr: "10.0.1.1/24"
+home_dir: "/home/ansible"
+kubernetes_version: '{{ lookup("env", "kubernetes_version") or "1.28.0" }}'
+calico_version: '{{ lookup("env", "calico_version") or "3.27.0" }}'
+dashboard_version: '{{ lookup("env", "dashboard_version") or "2.7.0" }}'
+join_command_location: "join_command.out"

@@ -1,0 +1,59 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.vscode/
+**/files/*.deb
+**/vars/**/ip_hosts.yml
+**/vars/**/my-git-config-global.yml
+pyvenv.cfg
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+
+# Directory for Terraform's workspace
+.terraform/
+
+# Terraform plan output
+*.tfplan
+
+# Local .terraform directories
+.terraform/*
+
+# .terraform directories that might be created by Terraform CLI
+**/.terraform/
+**/.terraform/*
+
+# Environment variable files
+.env
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+clean_known_hosts.sh
+playground/
+
+# Ansible secrets files
+**/.secrets/**
+
+
+.envrc

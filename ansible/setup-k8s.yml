@@ -1,0 +1,48 @@
+---
+- name: Set up Kubernetes components
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: Gather service state information as fact data
+      ansible.builtin.service_facts:
+    # - name: Print services facts
+    #   ansible.builtin.debug:
+    #     var: ansible_facts.services
+  roles:
+    - role: bootstrap-node
+      tags:
+        - bootstrap-node
+    - role: install-runc
+      tags:
+        - install-runc
+    - role: install-cni-plugins
+      tags:
+        - install-cni-plugins
+    - role: configure-containerd
+      tags:
+        - configure-containerd
+    - role: install-cri-tools
+      tags:
+        - install-cri-tools
+    - role: cfg-kubeadm-kubelet-kubectl
+      tags:
+        - cfg-kubeadm-kubelet-kubectl
+
+- name: Initialize Kubernetes control plane on primary node
+  hosts: control_plan_nodes
+  become: true
+  roles:
+    - role: init-kubeadm
+      tags:
+        - init-kubeadm
+    - role: kubectl_cheat_sheet
+      tags:
+        - kubectl_cheat_sheet
+
+- name: Join the workers/agents
+  hosts: worker_nodes
+  become: true
+  roles:
+    - role: join-workers
+      tags:
+        - join-workers

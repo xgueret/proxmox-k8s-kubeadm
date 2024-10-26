@@ -1,0 +1,6 @@
+---
+- name: Init Kubeadm
+  ansible.builtin.include_tasks: init-kubeadm.yml
+
+- name: Get join Command
+  ansible.builtin.include_tasks: get-join-command.yml
