@@ -177,6 +177,12 @@ sudo apt-get install -y kubectl
 
 
 
+## TODO
+
+- [ ] centralize k8s version used in several role
+
+
+
 ## :facepunch: Contribution
 
 Contributions are welcome! If you'd like to contribute, please follow these steps:

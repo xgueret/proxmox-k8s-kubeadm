@@ -43,20 +43,6 @@
         regexp: swap
         state: absent
 
-    # - name: Add Google GPG apt Key
-    #   ansible.builtin.apt_key:
-    #     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    #     state: present
-
-    # - name: Add K8s Repository
-    #   ansible.builtin.apt_repository:
-    #     repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
-    #     state: present
-
-    # - name: Update apt cache after adding Kubernetes repository
-    #   ansible.builtin.apt:
-    #     update_cache: true
-
     - name: Check if the key file exists for Kubernetes
       ansible.builtin.stat:
         path: "{{ kubernetes_gpg.path }}"

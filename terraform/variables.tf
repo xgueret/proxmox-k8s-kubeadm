@@ -35,13 +35,13 @@ variable "vm_count" {
 variable "vm_name_prefix" {
   description = "value of the vm name"
   type         = string
-  default       = "k8s-vm"
+  default       = "kubeBeast"
 }
 
 variable "vm_baseid" {
   description = "value of the vm id"
   type          = number
-  default        = 4000
+  default        = 9040
 }
 
 # Le numéro de départ pour les IPs
